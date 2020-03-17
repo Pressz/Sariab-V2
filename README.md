@@ -70,3 +70,25 @@ file: `config.php`
 $servername = "SERVER_NAME_HERE"; // Server name her
 $dbname = "DATABASE_NAME_HERE";
 ```
+
+# **How to contribute on project :**
+
+0- Install git from git-scm.com
+
+1- Make a **Fork** of the repository
+
+2- **Clone** the project on your machine
+
+3- Change whatever you want
+
+4- Commit your changes
+
+5- **Pull** before push
+
+6- Push
+
+7- Make a **pull request**
+
+8- Tell us your notes
+
+9- Your commits will be merged after review by developers of master branch
