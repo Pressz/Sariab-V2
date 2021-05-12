@@ -7,7 +7,7 @@ class Post3 extends Post {
 
         $Query = 'SELECT
         CONCAT(\'<a class="btn btn-sm btn-default" href="' . _Root . 'Admin/Items/Post3/\', id , \'">\', \'Edit\', \'</a>\') as Edit,
-        CONCAT(\'<a class="btn btn-sm btn-default" href="' . _Root . 'Home/View/\', id , \'">\', \'View\', \'</a>\') as View,
+        CONCAT(\'<a class="btn btn-sm btn-default" href="\', `Canonical` , \'">\', \'View\', \'</a>\') as View,
         Id
         , Submit
         ,`Title`
