@@ -26,7 +26,7 @@ class HomeController extends Controller {
         $Roads= $RoadModel->GetHome();
 
         $Data = [
-            "Title" => _AppName . ' خانه',
+            "Title" => _AppName,
             "Models" => [
                 'Posts'=> $Posts,
                 'Podcasts'=> $Podcasts,

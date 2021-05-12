@@ -2,8 +2,10 @@
 
 .h1 {
     font-size: 3.5em;
-    margin-top: 2em;
-    margin-bottom: 2em;
+    margin-top: 0em;
+    padding-top: 0em;
+    margin-bottom: 0em;
+    padding-bottom: 0em;
 }
 
 

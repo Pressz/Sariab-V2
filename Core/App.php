@@ -88,7 +88,7 @@ class App {
                 exit;
             case 404:
                 header('HTTP/1.0 404 Not Found');
-                include('static/errors/HTTP404.php');
+                include('static/errors/HTTP404.html');
                 exit;
             default:
                 throw new Exception($Message);

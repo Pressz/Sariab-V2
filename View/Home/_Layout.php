@@ -23,9 +23,11 @@
         </a>
         </div>
         <div class="profile-user-settings">
-            <h1 class="profile-user-name box-with-text background-dark">sariabbloggers</h1>
-            <span class="profile-real-name"><strong>ساریاب</strong>
-            گردآوری و اشتراک دانش و تجربه؛ و ایجاد انگیزه.</span>
+            <strong class="profile-user-name box-with-text background-dark">sariabbloggers</strong>
+            <span class="profile-real-name">
+                <strong>ساریاب</strong>
+                گردآوری و اشتراک دانش و تجربه؛ و ایجاد انگیزه.
+            </span>
         </div>
         <div class="searchbox-container">
             <form class="searchbox" method="GET" action="<?php echo _Root . 'Home/Index' ?>" >
@@ -94,7 +96,7 @@
         class="feedback submit-form"
         id="Feedback" method="post"
         action="<?php echo _Root . 'Home/Feedback' ?>">
-        <h1>بازخورد</h1>
+        <span class="h1">بازخورد</span>
         <p>
             همچنین ما خوشحال می‌شیم اگه بتوانیم به شما کمکی بکنیم. راحت باشید :)
         </p>

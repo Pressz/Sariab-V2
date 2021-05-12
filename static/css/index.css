@@ -1,4 +1,9 @@
 
+section {
+  padding-top: 2em;
+  margin-top: 2em;
+}
+
 .slideshow-container {
   max-width: 1000px;
   position: relative;
@@ -132,6 +137,11 @@ audio:active {
 audio {
     transition: all 0.5s linear;
     outline: none;
+}
+
+.podcast strong {
+  display: block;
+  margin: 0 auto 0 auto;
 }
 
 /* Hub Section */
