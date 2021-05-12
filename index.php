@@ -1,5 +1,4 @@
 <?php
-
 // Read configuration
 include('config.php');
 
@@ -21,7 +20,6 @@ include('Core/Model.php');
 
 // Libs
 include('Libs/string.php');
-include('Libs/fagd.php');
 include('Libs/apr1.php');
 include('Libs/time.php');
 

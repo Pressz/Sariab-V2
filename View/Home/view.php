@@ -18,17 +18,17 @@
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="<?php echo _Root ?>">
+    <meta property="og:url" content="<?php echo _Root . 'Home/View/' . $Data['Model']['Title'] ?>">
     <meta property="og:title" content="<?php echo strip_tags($Data['Model']['Title']) ?>">
     <meta property="og:description" content="<?php echo strip_tags($Data['Model']['Abstract']) ?>">
-    <!-- <meta property="og:image" content="http://sariab.ir/image-generator.php?id=<?php echo $Data['Model']['Id'] ?>"> -->
+    <meta property="og:image" content="<?php echo _Root . 'Media/PostCard/' . $Data['Model']['Id'] ?>">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="<?php echo _Root ?>">
+    <meta property="twitter:url" content="<?php echo _Root . 'Home/View/' . $Data['Model']['Title'] ?>">
     <meta property="twitter:title" content="<?php echo strip_tags($Data['Model']['Title']) ?>">
     <meta property="twitter:description" content="<?php echo strip_tags($Data['Model']['Abstract']) ?>">
-    <!-- <meta property="twitter:image" content="http://sariab.ir/image-generator.php?id=<?php echo $Data['Model']['Id'] ?>"> -->
+    <meta property="twitter:image" content="<?php echo _Root . 'Media/PostCard/' . $Data['Model']['Id'] ?>">
 
 </head>
 <body>
@@ -49,7 +49,9 @@
         محتوای غیر رسمی
         <i class="fas fa-exclamation-circle tooltip"><span class="tooltiptext">اجازه رسمی پیوند به این پست توسط ساریاب دریافت نشده است؛ و یا نویسنده عضو رسمی بلاگر های آزاد ساریاب نیست.</span></i>
         <?php } ?>
-        <div class="gallery-item card blog-post__img background-dark color-white"></div>
+        <div class="gallery-item card blog-post__img">
+            <img src="<?php echo _Root . 'Media/PostCard/' . $Data['Model']['Id'] ?>" alt="<?php echo $Data['Model']['Title'] ?>" />
+        </div>
     </div> 
     <!-- End Image Post View  -->
     <!-- Post Description -->

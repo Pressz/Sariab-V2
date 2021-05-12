@@ -2,3 +2,11 @@ download
 .vscode
 config.php
 .htpasswd
+Libs/gd-text-master/example*
+Libs/gd-text-master/test*
+Libs/gd-text-master/phpunit.xml
+Libs/gd-text-master/composer.json
+Libs/php-gd-persian-master/phpgd/CHANGES
+Libs/php-gd-persian-master/phpgd/example*
+Libs/php-gd-persian-master/phpgd/test*
+Libs/php-gd-persian-master/phpgd/*.ttf
