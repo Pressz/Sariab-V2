@@ -234,10 +234,9 @@ echo '
             $_POST['Publisher'] = StringFunctions::remove_all_non_alpha_numeric($_POST['Publisher']);
         }
 
-        
-
         $Model->SubmitPost([
             'Title' => $_POST['Title'],
+            'Language' => $_POST['Language'],
             'Publisher' => $IsExternalWriter ? $_POST['Publisher'] : $Publisher,
             'Abstract' => $_POST['Abstract'],
             'Canonical' => $_POST['Canonical'],

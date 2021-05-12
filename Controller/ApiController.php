@@ -31,9 +31,6 @@ class ApiController extends Controller {
     }
 
     function NewPostPOST() {
-        // TODO: Authorization
-        // TODO: Authentication
-
         $post = $this->GetJsonInput();
         if ($post == null)
         {

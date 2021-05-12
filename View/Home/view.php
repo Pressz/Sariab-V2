@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="<?php echo $Data['Language'] ?>">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title><?php echo $Data['Title'] ?></title>
+    
+    <link rel="home" href="<?php echo _Root ?>">
 
     <link rel="stylesheet" href="<?php echo _Root ?>static/css/sariab.css">
     <link rel="stylesheet" href="<?php echo _Root ?>static/css/layout.css">

@@ -2,13 +2,14 @@
 
 class Post extends Model{
     
-    public string $Title;
-    protected string $Meta;
-    protected string $Publisher;
-    protected string $IsVerified;
-    protected string $IsExternalWriter;
-    public string $Canonical;
-    public string $Abstract;
+    public $Title;
+    public $Language;
+    protected $Meta;
+    protected $Publisher;
+    protected $IsVerified;
+    protected $IsExternalWriter;
+    public $Canonical;
+    public $Abstract;
 
 
     function GetHome($Values, $page) {
@@ -40,8 +41,8 @@ class Post extends Model{
 
     function SubmitPost($Values) {
         $Query = "INSERT INTO `Posts`
-        (`Publisher`, `Title`, `Canonical`, `Abstract`, `IsExternalWriter`, `IsVerified`, `Submit`, `Meta`)
-        VALUES (:Publisher, :Title, :Canonical, :Abstract, :IsExternalWriter, b'0', NOW(), '');
+        (`Publisher`, `Title`, `Canonical`, `Abstract`, `IsExternalWriter`, `IsVerified`, `Submit`, `Meta`, `Language`)
+        VALUES (:Publisher, :Title, :Canonical, :Abstract, :IsExternalWriter, b'0', NOW(), '', :Language);
         ";
         $this->DoQuery($Query, $Values);
     }

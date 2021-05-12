@@ -125,6 +125,19 @@
                 <?php foreach (explode(',', $item['Meta']) as $tag) { ?>
                 | <a class="color-dark background-gold border-radius" href="<?php echo _Root . 'Home/Index/' . $tag ?>"><?php echo $tag ?></a>
                 <?php } ?>
+                | <?php
+                    switch($item['Language'])
+                    {
+                        case "fa":
+                        case "fa-ir":
+                            echo "🇮🇷";
+                            break;
+                        case "en":
+                        case "en-us":
+                            echo "🇺🇸";
+                            break;
+                    }
+                ?>
             </p>
             <?php /*
             <p><?php
