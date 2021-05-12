@@ -18,14 +18,14 @@
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="<?php echo _Root . 'Home/View/' . $Data['Model']['Title'] ?>">
+    <meta property="og:url" content="<?php echo _Root . 'Home/View/' . $Data['Model']['Id'] ?>">
     <meta property="og:title" content="<?php echo strip_tags($Data['Model']['Title']) ?>">
     <meta property="og:description" content="<?php echo strip_tags($Data['Model']['Abstract']) ?>">
     <meta property="og:image" content="<?php echo _Root . 'Media/PostCard/' . $Data['Model']['Id'] ?>">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="<?php echo _Root . 'Home/View/' . $Data['Model']['Title'] ?>">
+    <meta property="twitter:url" content="<?php echo _Root . 'Home/View/' . $Data['Model']['Id'] ?>">
     <meta property="twitter:title" content="<?php echo strip_tags($Data['Model']['Title']) ?>">
     <meta property="twitter:description" content="<?php echo strip_tags($Data['Model']['Abstract']) ?>">
     <meta property="twitter:image" content="<?php echo _Root . 'Media/PostCard/' . $Data['Model']['Id'] ?>">
