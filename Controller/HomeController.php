@@ -117,7 +117,7 @@ echo '
         , time() + (86400 * 30), "/");
 
         $Model = $this->CallModel("Post");
-        $Rows = $Model->GetItemByIdentifier([
+        $Rows = $Model->GetVerifiedItemByIdentifier([
             'Id'=> $Id
         ]);
         $this->RedirectResponse($Rows[0]['Canonical']);
