@@ -32,6 +32,19 @@
     <meta property="twitter:description" content="<?php echo strip_tags($Data['Model']['Abstract']) ?>">
     <meta property="twitter:image" content="<?php echo _Root . 'Media/PostCard/' . $Data['Model']['Id'] ?>">
 
+    <!-- YektaNet -->
+    <script type="text/javascript">
+        (function(){
+        var now = new Date();
+        var head = document.getElementsByTagName('head')[0];
+        var script = document.createElement('script');
+        script.async = true;
+        var script_address = 'https://cdn.yektanet.com/js/sariab.ir/native-sariab.ir-18316.js';
+        script.src = script_address + '?v=' + now.getFullYear().toString() + '0' + now.getMonth() + '0' + now.getDate() + '0' + now.getHours();
+        head.appendChild(script);
+        })();
+	</script>
+
 </head>
 <body>
 <!-- View Page Post -->
@@ -102,6 +115,10 @@
 
 </div>
 <!-- End of container -->
+
+<!-- YektaNet -->
+<div id="pos-article-text-25423"></div>
+<!-- End of YektaNet -->
 
 </main>
 </body>

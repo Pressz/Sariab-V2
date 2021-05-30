@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="<?php echo _Root ?>static/css/index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.css">
     
+    <!-- YektaNet -->
     <script type="text/javascript">
         (function(){
         var now = new Date();
@@ -91,7 +92,9 @@
     <!-- End of profile section -->
 </header>
 
+<!-- YektaNet -->
 <div id="pos-article-text-25423"></div>
+<!-- End of YektaNet -->
 
 <main class="container background-white color-dark">
 

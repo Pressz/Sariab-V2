@@ -131,9 +131,10 @@ echo '
         ]);
 
         $Data = [
-            "Title" => $Rows[0]['Title'],
-            "RoadId" => $RoadId,
-            "Model" => $Rows[0]
+            'Title' => $Rows[0]['Title'],
+            'RoadId' => $RoadId,
+            'Model' => $Rows[0],
+            'Language' => $Rows[0]['Language']
         ];
 
         if ($RoadId != null)
