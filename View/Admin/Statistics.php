@@ -91,7 +91,7 @@ echo ")";
         {
         ?>
         <tr>
-          <td colspan="5" class="font-small"><a class="btn btn-light btn-sm" href="<?php echo $item['Referer'] ?>"><?php echo $item['Referer'] ?></a></td>
+          <td colspan="5"><?php echo $item['Referer'] ?></td>
           <td class="font-large"><?php echo $item['TotalRequests'] ?></td>
         </tr>
         <?php
