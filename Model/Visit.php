@@ -128,4 +128,18 @@ class Visit extends Model {
         $Result = $this->DoSelect($Query);
         return $Result;
     }
+
+    function PagesVisitsByReferer() {
+        $Query = 'SELECT
+        SUBSTRING_INDEX(SUBSTRING_INDEX(SUBSTRING_INDEX(SUBSTRING_INDEX(HTTP_REFERER, \'/\', 3), \'://\', -1), \'/\', 1), \'?\', 1) as Referer,
+        COUNT(*) as TotalRequests
+        FROM Visits
+        WHERE `Submit` > DATE_ADD(NOW(), INTERVAL -366 DAY) -- Limit for one year
+        GROUP BY Referer
+        ORDER BY TotalRequests DESC
+        LIMIT 2,10
+        ';
+        $Result = $this->DoSelect($Query);
+        return $Result;
+    }
 }

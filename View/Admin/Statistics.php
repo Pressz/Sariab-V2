@@ -75,6 +75,33 @@ echo ")";
     </div>
 </div>
 
+<div class="card m-4" id="Posts">
+    <div class="card-header">ارجاع دهندگان</div>
+    <div class="card-body">
+    <table class="table table-striped table-dark" style="table-layout: fixed;">
+      <thead>
+        <tr>
+          <th scope="col" colspan="5">آدرس</th>
+          <th scope="col">تعداد</th>
+        </tr>
+      </thead>
+      <tbody>
+        <?php
+        foreach ($Data['PagesVisitsByReferer'] as $item)
+        {
+        ?>
+        <tr>
+          <td colspan="5" class="font-small"><a class="btn btn-light btn-sm" href="<?php echo $item['Referer'] ?>"><?php echo $item['Referer'] ?></a></td>
+          <td class="font-large"><?php echo $item['TotalRequests'] ?></td>
+        </tr>
+        <?php
+        }
+        ?>
+      </tbody>
+    </table>
+    </div>
+</div>
+
 <div class="card m-4">
     <div class="card-header" id="Requests">بازدید ماه‌های اخیر</div>
     <div class="card-body">
