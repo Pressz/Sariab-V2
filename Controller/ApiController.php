@@ -1,17 +1,5 @@
 <?php
-class ApiController extends Controller {
-
-    private function ReturnJson($Data) {
-        header('Content-Type: application/json');
-        $this->Render("Blank", json_encode($Data), true);
-    }
-    private function GetJsonInput() {
-        $inputJSON = file_get_contents('php://input');
-        $client_input = json_decode($inputJSON, TRUE);
-        return $client_input;
-    }
-
-    // ==================================================
+class ApiController extends PiController {
 
     function PostsGET($search_query = '') {
         $Model = $this->CallModel("Post");

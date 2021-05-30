@@ -509,3 +509,5 @@ ALTER TABLE `Feedbacks` ADD `Review` VARCHAR(3000) NOT NULL AFTER `Status`;
 ALTER TABLE `Feedbacks` CHANGE `Review` `Review` VARCHAR(3000) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL DEFAULT 'Not reviewed';
 
 ALTER TABLE `Posts` ADD `Language` CHAR(2) NOT NULL DEFAULT 'fa' AFTER `Title`;
+
+create table BotsVisits select * from Visits limit 0

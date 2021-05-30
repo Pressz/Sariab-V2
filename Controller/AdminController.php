@@ -142,9 +142,13 @@ class AdminController extends Controller {
             return;
         }
 
+        // Today top users by cookies
+        $Rows = $Model->TodayTopUsers();
+        $Data['TodayTopUsers'] = $Rows;
+
         // Get top users by cookies
-        $Rows = $Model->TopUsers();
-        $Data['TopUsers'] = $Rows;
+        $Rows = $Model->WeekTopUsers();
+        $Data['WeekTopUsers'] = $Rows;
 
         // Get daily grouped count
         $Rows = $Model->DailyGroupedVisitCount();

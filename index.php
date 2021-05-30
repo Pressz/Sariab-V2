@@ -25,6 +25,7 @@ include('Libs/time.php');
 
 // Controllers core
 include('Core/Controller.php');
+include('Core/PiController.php');
 
 // Router
 include('Core/App.php');

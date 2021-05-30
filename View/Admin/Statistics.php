@@ -26,14 +26,43 @@ echo ")";
   </div>
 </div>
 
+<div class="card m-4" id="Posts">
+    <div class="card-header">مهمانان امروز</div>
+    <div class="card-body">
+    <table class="table table-striped table-dark" style="table-layout: fixed;">
+      <thead>
+        <tr>
+          <th scope="col">شناسه</th>
+          <th scope="col">درخواست</th>
+          <th scope="col" colspan="5">ایجنت</th>
+        </tr>
+      </thead>
+      <tbody>
+        <?php
+        foreach ($Data['TodayTopUsers'] as $item)
+        {
+        ?>
+        <tr>
+          <td><a class="btn btn-light btn-sm" href="<?php echo _Root . 'Admin/Statistics/' . $item['CLIENT_TRACK'] ?>"><?php echo substr($item['CLIENT_TRACK'], 0, 5) ?></a></td>
+          <td><?php echo $item['TotalRequests'] ?></td>
+          <td colspan="5" class="font-small"><?php echo $item['HTTP_USER_AGENT'] ?></td>
+        </tr>
+        <?php
+        }
+        ?>
+      </tbody>
+    </table>
+    </div>
+</div>
+
 <div class="card m-4">
 <div class="card-header" id="Requests">بازدید کننده‌های برتر هفت روز گذشته</div>
     <div class="card-body">
 <?php
-  foreach ($Data['TopUsers'] as $Row) {
-    echo '<a class="btn bg-primary text-white d-block m-1" title="' . $Row['HTTP_USER_AGENT'] . '"
-    href="' . _Root . 'Admin/Statistics/' . $Row['CLIENT_TRACK'] . '">'
-    . $Row['CLIENT_TRACK'] . ' (' . $Row['TotalRequests'] . ')' . '</a>';
+  foreach ($Data['WeekTopUsers'] as $item) {
+    echo '<a class="btn bg-primary text-white d-block m-1" title="' . $item['HTTP_USER_AGENT'] . '"
+    href="' . _Root . 'Admin/Statistics/' . $item['CLIENT_TRACK'] . '">'
+    . $item['CLIENT_TRACK'] . ' (' . $item['TotalRequests'] . ')' . '</a>';
   }
 ?>
   </div>
@@ -88,9 +117,8 @@ echo ")";
     </table>
     </div>
 </div>
+
 <script>
-
-
 // ==== Area Chart 1 ====
 
 var myLineChart = new Chart('myAreaChart1', {

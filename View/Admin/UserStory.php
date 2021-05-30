@@ -14,7 +14,7 @@
     <tr>
       <td scope="row"><?php echo $Row['Submit']?></td>
       <td class="font-small"><?php echo $Row['HTTP_REFERER']?></td>
-      <td class="font-small"><?php echo $Row['Uri']?></td>
+      <td class="font-small"><a class="btn btn-light btn-sm" href="<?php echo $Row['Uri']?>"><?php echo $Row['Uri']?></a></td>
       <td><?php echo $Row['PHP_AUTH_USER']?></td>
     </tr>
     <?php } ?>

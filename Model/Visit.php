@@ -2,7 +2,20 @@
 
 class Visit extends Model {
 
-    function TopUsers() {
+    function TodayTopUsers() {
+        $Query = 'SELECT
+        COUNT(*) as TotalRequests, `CLIENT_TRACK`, `HTTP_USER_AGENT`
+        FROM `Visits`
+        WHERE `Submit` > DATE_ADD(NOW(), INTERVAL -1 DAY)
+        AND (`PHP_AUTH_USER` IS NULL OR `PHP_AUTH_USER` LIKE \'\')
+        GROUP BY `CLIENT_TRACK`, `HTTP_USER_AGENT`
+        ORDER BY TotalRequests DESC, `CLIENT_TRACK` DESC
+        LIMIT 100';
+        $Result = $this->DoSelect($Query);
+        return $Result;
+    }
+
+    function WeekTopUsers() {
         $Query = 'SELECT
         COUNT(*) as TotalRequests, `CLIENT_TRACK`, `HTTP_USER_AGENT`
         FROM `Visits`
