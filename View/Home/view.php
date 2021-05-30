@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="<?php echo $Data['Language'] ?>">
+<html ⚡ lang="<?php echo $Data['Language'] ?>">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,6 +12,44 @@
     <link rel="stylesheet" href="<?php echo _Root ?>static/css/layout.css">
     <link rel="stylesheet" href="<?php echo _Root ?>static/css/view.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.css">
+    
+    <!-- AMP -->
+    <link rel="canonical" href="<?php echo _Root . 'Home/View/' . $Data['Model']['Id'] ?>">
+    <!-- <link rel="preload" as="script" href="https://cdn.ampproject.org/v0.js">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <link rel="preconnect dns-prefetch" href="https://fonts.gstatic.com/" crossorigin>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"> -->
+    <style amp-custom>    </style>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "NewsArticle",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://google.com/article"
+      },
+      "headline": "<?php echo strip_tags($Data['Model']['Title']) ?>",
+      "image": [
+        "<?php echo _Root . 'Media/PostCard/' . $Data['Model']['Id'] ?>"
+      ],
+      "datePublished": "<?php echo $Data['Model']['Submit'] ?>",
+      "dateModified": "<?php echo $Data['Model']['Submit'] ?>",
+      "author": {
+        "@type": "Person",
+        "name": "<?php echo $Data['Model']['Publisher'] ?>"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Sariab Bloggers",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "<?php echo _Root ?>logo/Icon.svg"
+        }
+      },
+      "description": "<?php echo strip_tags($Data['Model']['Abstract']) ?>"
+    }
+    </script>
 
     <!-- Primary Meta Tags -->
     <meta name="title" content="<?php echo strip_tags($Data['Model']['Title']) ?>">
@@ -33,17 +71,18 @@
     <meta property="twitter:image" content="<?php echo _Root . 'Media/PostCard/' . $Data['Model']['Id'] ?>">
 
     <!-- YektaNet -->
+    <!-- <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script> -->
     <script type="text/javascript">
-        (function(){
-        var now = new Date();
-        var head = document.getElementsByTagName('head')[0];
-        var script = document.createElement('script');
-        script.async = true;
-        var script_address = 'https://cdn.yektanet.com/js/sariab.ir/native-sariab.ir-18316.js';
-        script.src = script_address + '?v=' + now.getFullYear().toString() + '0' + now.getMonth() + '0' + now.getDate() + '0' + now.getHours();
-        head.appendChild(script);
-        })();
-	</script>
+      (function(){
+      var now = new Date();
+      var head = document.getElementsByTagName('head')[0];
+      var script = document.createElement('script');
+      script.async = true;
+      var script_address = 'https://cdn.yektanet.com/js/sariab.ir/native-sariab.ir-18316.js';
+      script.src = script_address + '?v=' + now.getFullYear().toString() + '0' + now.getMonth() + '0' + now.getDate() + '0' + now.getHours();
+      head.appendChild(script);
+      })();
+    </script>
 
 </head>
 <body>
@@ -65,7 +104,12 @@
         <i class="fas fa-exclamation-circle tooltip"><span class="tooltiptext">اجازه رسمی پیوند به این پست توسط ساریاب دریافت نشده است؛ و یا نویسنده عضو رسمی بلاگر های آزاد ساریاب نیست.</span></i>
         <?php } ?>
         <div class="gallery-item card blog-post__img">
-            <img src="<?php echo _Root . 'Media/PostCard/' . $Data['Model']['Id'] ?>" alt="<?php echo $Data['Model']['Title'] ?>" />
+                <amp-img src="<?php echo _Root . 'Media/PostCard/' . $Data['Model']['Id'] ?>"
+             width="720" 
+             height="720"
+             layout="responsive" 
+             alt="<?php echo $Data['Model']['Title'] ?>">
+            </amp-img>
         </div>
     </div> 
     <!-- End Image Post View  -->
@@ -118,6 +162,17 @@
 
 <!-- YektaNet -->
 <div id="pos-article-text-25423"></div>
+<!-- <amp-ad
+    width="100"
+    height="178"
+    heights="(min-width: 768px) 134%, 178%"
+    layout="responsive"
+    type="yektanet"
+    data-publisher-name="sariab.ir"
+    data-script-name="native-amp-sariab.ir-1215.js"
+    data-pos-id="pos-article-text-25427"
+  >
+  </amp-ad> -->
 <!-- End of YektaNet -->
 
 </main>
