@@ -4,7 +4,7 @@
   <thead class="thead-dark">
     <tr>
       <th scope="col">Date</th>
-      <th scope="col">Referer</th>
+      <th scope="col">IP</th>
       <th scope="col">Page</th>
       <th scope="col">Username</th>
     </tr>
@@ -13,7 +13,7 @@
     <?php $i = 0; foreach ($Data['UserStory'] as $Row) { $i++?>
     <tr>
       <td scope="row"><?php echo $Row['Submit']?></td>
-      <td class="font-small"><?php echo $Row['HTTP_REFERER']?></td>
+      <td><?php echo $Row['REMOTE_ADDR']?></td>
       <td class="font-small"><a class="btn btn-light btn-sm" href="<?php echo $Row['Uri']?>"><?php echo $Row['Uri']?></a></td>
       <td><?php echo $Row['PHP_AUTH_USER']?></td>
     </tr>

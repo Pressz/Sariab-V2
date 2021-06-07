@@ -11,6 +11,7 @@ class Maintenance extends Model {
         OR HTTP_USER_AGENT LIKE \'%facebookexternalhit%\'
         OR HTTP_USER_AGENT LIKE \'%HubSpot%\'
         OR HTTP_USER_AGENT LIKE \'%Linguee%\'
+        OR HTTP_USER_AGENT LIKE \'%MJ12bot%\'
         ';
 
         $Query = '

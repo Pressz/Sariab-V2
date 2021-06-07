@@ -162,11 +162,15 @@ class AdminController extends Controller {
         $Rows = $Model->GroupedVisitCountByAgent();
         $Data['GroupedVisitCountByAgent'] = $Rows;
 
-        // Get grouped visit count by agent
+        // Get last posts visits
         $Rows = $Model->PostsVisitCountByAddress();
         $Data['PostsVisitCountByAddress'] = $Rows;
 
-        // Get grouped visit count by agent
+        // Get last posts visits
+        $Rows = $Model->LastPostsViewsByAddress();
+        $Data['LastPostsViewsByAddress'] = $Rows;
+
+        // Get grouped visit count by referer
         $Rows = $Model->PagesVisitsByReferer();
         $Data['PagesVisitsByReferer'] = $Rows;
 

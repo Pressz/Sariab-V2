@@ -1,8 +1,10 @@
 <?php
 
-class Visit extends Model {
+class Visit extends Model
+{
 
-    function TodayTopUsers() {
+    function TodayTopUsers()
+    {
         $Query = 'SELECT
         COUNT(*) as TotalRequests, `CLIENT_TRACK`, `HTTP_USER_AGENT`
         FROM `Visits`
@@ -15,7 +17,8 @@ class Visit extends Model {
         return $Result;
     }
 
-    function WeekTopUsers() {
+    function WeekTopUsers()
+    {
         $Query = 'SELECT
         COUNT(*) as TotalRequests, `CLIENT_TRACK`, `HTTP_USER_AGENT`
         FROM `Visits`
@@ -27,10 +30,11 @@ class Visit extends Model {
         return $Result;
     }
 
-    function UserStory($Values) {
+    function UserStory($Values)
+    {
         $Query = 'SELECT `Submit`, REQUEST_URI as Uri,
         `PHP_AUTH_USER`, `PHP_AUTH_USER`,
-        `HTTP_REFERER`
+        `HTTP_REFERER`, `REMOTE_ADDR`
         FROM `Visits`
         -- TODO: Difference with prev step (To determine waiting time)
         WHERE CLIENT_TRACK=:CLIENT_TRACK
@@ -40,7 +44,8 @@ class Visit extends Model {
         return $Result;
     }
 
-    function DailyGroupedVisitCount() {
+    function DailyGroupedVisitCount()
+    {
 
         $temp = 'create temporary table dailyhours (
             DayNumber smallint,
@@ -76,10 +81,10 @@ class Visit extends Model {
         ';
         $Result = $this->DoSelect($Query);
         return $Result;
-
     }
 
-    function GroupedVisitCount() {
+    function GroupedVisitCount()
+    {
         $Query = 'SELECT
         CONCAT(\'هفته \', WeekNumber) as WeekNumber,
         COUNT(*) as TotalVisits
@@ -97,7 +102,8 @@ class Visit extends Model {
         return $Result;
     }
 
-    function GroupedVisitCountByAgent() {
+    function GroupedVisitCountByAgent()
+    {
         $Query = 'SELECT
         COUNT(*) as TotalVisits,
         HTTP_USER_AGENT as Agent
@@ -110,8 +116,9 @@ class Visit extends Model {
         $Result = $this->DoSelect($Query);
         return $Result;
     }
-    
-    function PostsVisitCountByAddress() {
+
+    function PostsVisitCountByAddress()
+    {
         $Query = 'SELECT
         COUNT(*) as TotalVisits,
         Posts.Id,
@@ -123,13 +130,32 @@ class Visit extends Model {
         AND `REQUEST_URI` LIKE \'%HOME/REDIRECT%\'
         GROUP BY Posts.Id
         ORDER BY TotalVisits DESC, Posts.Id DESC
-        LIMIT 50
+        LIMIT 20
         ';
         $Result = $this->DoSelect($Query);
         return $Result;
     }
 
-    function PagesVisitsByReferer() {
+    function LastPostsViewsByAddress()
+    {
+        $Query = 'SELECT
+        COUNT(*) as TotalVisits,
+        Posts.Id,
+        Posts.Title
+        FROM `Visits`
+        LEFT OUTER JOIN `Posts`
+        ON Posts.Id = SUBSTRING(REQUEST_URI FROM POSITION(\'View\' in REQUEST_URI) + 5 /* FOR 0 */)
+        AND `REQUEST_URI` LIKE \'%HOME/VIEW%\'
+        GROUP BY Posts.Id
+        ORDER BY Posts.Id DESC
+        LIMIT 10
+        ';
+        $Result = $this->DoSelect($Query);
+        return $Result;
+    }
+
+    function PagesVisitsByReferer()
+    {
         $Query = 'SELECT
         SUBSTRING_INDEX(SUBSTRING_INDEX(SUBSTRING_INDEX(SUBSTRING_INDEX(HTTP_REFERER, \'/\', 3), \'://\', -1), \'/\', 1), \'?\', 1) as Referer,
         COUNT(*) as TotalRequests

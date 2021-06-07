@@ -117,6 +117,35 @@ echo ")";
 </div>
 
 <div class="card m-4" id="Posts">
+    <div class="card-header">بازدید آخرین پست‌ها</div>
+    <div class="card-body">
+    <table class="table table-striped table-dark" style="table-layout: fixed;">
+      <thead>
+        <tr>
+          <th scope="col">تعداد درخواست</th>
+          <th scope="col">مشاهده</th>
+          <th scope="col" colspan="5">عنوان</th>
+        </tr>
+      </thead>
+      <tbody>
+        <?php
+        foreach ($Data['LastPostsViewsByAddress'] as $item)
+        {
+        ?>
+        <tr>
+          <td><?php echo $item['TotalVisits'] ?></td>
+          <td><a class="btn btn-light btn-sm" href="<?php echo _Root . 'Home/View/' . $item['Id'] ?>">مشاهده</a></td>
+          <td colspan="5" class="font-small"><?php echo $item['Title'] ?></td>
+        </tr>
+        <?php
+        }
+        ?>
+      </tbody>
+    </table>
+    </div>
+</div>
+
+<div class="card m-4" id="Posts">
     <div class="card-header">پربازدید ترین پست‌های نود روز گذشته</div>
     <div class="card-body">
     <table class="table table-striped table-dark" style="table-layout: fixed;">

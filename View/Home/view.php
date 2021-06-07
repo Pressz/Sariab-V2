@@ -15,6 +15,7 @@
     
     <!-- AMP -->
     <link rel="canonical" href="<?php echo _Root . 'Home/View/' . $Data['Model']['Id'] ?>">
+    <?php /* TODO: AMP
     <!-- <link rel="preload" as="script" href="https://cdn.ampproject.org/v0.js">
     <script async src="https://cdn.ampproject.org/v0.js"></script>
     <link rel="preconnect dns-prefetch" href="https://fonts.gstatic.com/" crossorigin>
@@ -50,6 +51,8 @@
       "description": "<?php echo strip_tags($Data['Model']['Abstract']) ?>"
     }
     </script>
+    <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
+    */ ?>
 
     <!-- Primary Meta Tags -->
     <meta name="title" content="<?php echo strip_tags($Data['Model']['Title']) ?>">
@@ -71,7 +74,6 @@
     <meta property="twitter:image" content="<?php echo _Root . 'Media/PostCard/' . $Data['Model']['Id'] ?>">
 
     <!-- YektaNet -->
-    <!-- <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script> -->
     <script type="text/javascript">
       (function(){
       var now = new Date();
@@ -103,6 +105,9 @@
         محتوای غیر رسمی
         <i class="fas fa-exclamation-circle tooltip"><span class="tooltiptext">اجازه رسمی پیوند به این پست توسط ساریاب دریافت نشده است؛ و یا نویسنده عضو رسمی بلاگر های آزاد ساریاب نیست.</span></i>
         <?php } ?>
+        
+        <img src="<?php echo _Root . 'Media/PostCard/' . $Data['Model']['Id'] ?>" alt="<?php echo $Data['Model']['Title'] ?>" />
+        <?php /* TODO: AMP
         <div class="gallery-item card blog-post__img">
                 <amp-img src="<?php echo _Root . 'Media/PostCard/' . $Data['Model']['Id'] ?>"
              width="720" 
@@ -111,6 +116,7 @@
              alt="<?php echo $Data['Model']['Title'] ?>">
             </amp-img>
         </div>
+        */ ?>
     </div> 
     <!-- End Image Post View  -->
     <!-- Post Description -->
@@ -162,7 +168,8 @@
 
 <!-- YektaNet -->
 <div id="pos-article-text-25423"></div>
-<!-- <amp-ad
+<?php /* TODO: AMP
+<amp-ad
     width="100"
     height="178"
     heights="(min-width: 768px) 134%, 178%"
@@ -172,7 +179,8 @@
     data-script-name="native-amp-sariab.ir-1215.js"
     data-pos-id="pos-article-text-25427"
   >
-  </amp-ad> -->
+  </amp-ad>
+*/ ?>
 <!-- End of YektaNet -->
 
 </main>
